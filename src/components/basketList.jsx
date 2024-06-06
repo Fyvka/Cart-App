@@ -17,17 +17,14 @@ function BasketList(props) {
    return (
       <ul className="collection basket-list">
          <li className="collection-item active #212121 grey darken-4">Корзина</li>
-         {order.lenght ? (
-            order.map((item) => <BasketItem
+         {order.map((item) => <BasketItem
                key={item.id}
                removeFromBasket={removeFromBasket}
                incQuantity={incQuantity}
                decQuantity={decQuantity}
                {...item}
             />)
-         ) : (
-            <li className="collection-item"> Корзина пуста </li>
-         )}
+         }
          <li className="collection-item active #212121 grey darken-4"> Общая стоимость: {totalPrice}  </li>
          <i className="material-icons basket-clear" onClick={handleBasketShow}>clear</i>
       </ul>
